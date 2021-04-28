@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/resumeAppSpring/resumeAppSpring.iml" filepath="$PROJECT_DIR$/resumeAppSpring/resumeAppSpring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resumewebappspring.iml" filepath="$PROJECT_DIR$/resumewebappspring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resumewebappspring/resumewebappspring (1) (com.mycompany).iml" filepath="$PROJECT_DIR$/resumewebappspring/resumewebappspring (1) (com.mycompany).iml" />
+    </modules>
+  </component>
+</project>

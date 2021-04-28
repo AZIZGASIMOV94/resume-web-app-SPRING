@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="resumewebappspring (1) (com.mycompany):war">
+    <output-path>$PROJECT_DIR$/resumewebappspring/target</output-path>
+    <root id="archive" name="resumewebappspring-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="resumewebappspring (1) (com.mycompany):war exploded" />
+    </root>
+  </artifact>
+</component>

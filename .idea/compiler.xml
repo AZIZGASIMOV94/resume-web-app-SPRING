@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="resumeAppSpring" />
+        <module name="resumewebappspring (1) (com.mycompany)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="resumeAppSpring" target="1.8" />
+      <module name="resumewebappspring" target="1.8" />
+      <module name="resumewebappspring (1) (com.mycompany)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
