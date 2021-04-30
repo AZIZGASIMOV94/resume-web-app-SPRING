@@ -17,21 +17,21 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-       UserTable userTable =  userRepository.findByEmail(email);
+        UserTable userTable =  userRepository.findByEmail(email);
 
         if (userTable != null) {
             User.UserBuilder builder = org.springframework.security.core.userdetails.User.withUsername(email);
 
             builder.disabled(false);
             builder.password(userTable.getPassword());
-
-            String[] authoritiesArr = new String[]{ "ADMIN", "USER", "ROLE_USER"};
+            //we can get user groups from the DB assign it to array like so here
+            //String[] authArr = new String[]{userTable.getGroup().toArray()}
+            String[] authoritiesArr = new String[]{ "ADMIN", "USER"/*, "ROLE_USER"*/};
             builder.authorities(authoritiesArr);
 
             return builder.build();
         } else {
             throw new UsernameNotFoundException("User not found.");
         }
-
     }
 }

@@ -3,6 +3,8 @@ package com.mycompany.dao.impl;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.mycompany.entity.UserTable;
 import com.mycompany.dao.inter.UserDaoInter;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -14,10 +16,12 @@ import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+
 /*
 @Transactional
 */
+@Repository
+@Qualifier("userdao")
 public class UserDaoImpl implements UserDaoInter {
 
     @PersistenceContext

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.mycompany")
 public class ResumeAppSpringApplication {
 
 
