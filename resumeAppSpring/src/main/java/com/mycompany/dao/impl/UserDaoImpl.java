@@ -4,6 +4,7 @@ import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.mycompany.entity.UserTable;
 import com.mycompany.dao.inter.UserDaoInter;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -113,17 +114,25 @@ public class UserDaoImpl implements UserDaoInter {
         return true;
     }
 
+    //private BCryptPasswordEncoder crypt = new BCryptPasswordEncoder();
     private BCrypt.Hasher crypt = BCrypt.withDefaults();
 
     @Override
     public boolean addUser(UserTable u) {
+        //u.setPassword(crypt.encode(u.getPassword()));
         u.setPassword(crypt.hashToString(4, u.getPassword().toCharArray()));
         em.persist(u);
         return true;
     }
 
     public static void main(String[] args) {
-        UserTable u2 = new UserTable(23, "test2", "testov2","test2@mail.ru", "123456", "+994555955858");
+
+        UserTable u2 = new UserTable(
+                "eziz",
+                "kerimov",
+                "kerimov@mail.ru",
+                "+994323232323",
+                "12345");
         new UserDaoImpl().addUser(u2);
         System.out.println("added");
     }

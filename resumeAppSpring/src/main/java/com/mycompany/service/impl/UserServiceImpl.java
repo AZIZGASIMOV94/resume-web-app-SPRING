@@ -5,15 +5,10 @@ import com.mycompany.dao.inter.UserDaoInter;
 import com.mycompany.entity.UserTable;
 import com.mycompany.service.inter.UserServiceInter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +18,10 @@ public class UserServiceImpl implements UserServiceInter {
 
     @Autowired
     private UserDaoInter userDao;
+
+  /*  @Autowired
+    private UserServiceInter userDao;*/
+
 
     @Override
     public List<UserTable> searchUsers(String name, String surname, Integer nationalityId) {
@@ -65,6 +64,18 @@ public class UserServiceImpl implements UserServiceInter {
     @Override
     public boolean addUser(UserTable u) {
        return userDao.addUser(u);
+    }
+
+    public static void main(String[] args) {
+
+        UserTable userTable = new UserTable(
+                "kerim",
+                "kerimov",
+                "kerimov@mail.ru",
+                "+994323232323",
+                "54321");
+        new UserServiceImpl().addUser(userTable);
+        System.out.println("success");
     }
 
 }

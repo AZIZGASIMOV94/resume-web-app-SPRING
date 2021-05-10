@@ -24,7 +24,7 @@ public abstract class AbstractDAO {
     private static EntityManagerFactory emf = null;
     
     public EntityManager entityManage(){
-        if(emf ==null){
+        if(emf == null){
             emf = Persistence.createEntityManagerFactory("com.mycompany_resumeApp_jar_1.0-SNAPSHOTPU3");
         }
         EntityManager em = emf.createEntityManager();

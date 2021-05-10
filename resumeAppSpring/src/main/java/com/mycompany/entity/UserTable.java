@@ -95,6 +95,14 @@ public class UserTable implements Serializable {
         this.phone = phone;
         this.password = password;
     }
+    public UserTable( String name, String surname, String email, String phone, String password) {
+        //this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+    }
 
     public Integer getId() {
         return id;
