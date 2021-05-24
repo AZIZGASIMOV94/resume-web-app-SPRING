@@ -17,8 +17,7 @@ import java.util.List;
  * Description: check decoded token here using encoded token:
  * URL: https://jwt.io/
  */
-
-
+@CrossOrigin
 @RestController
 public class UserRestController {
 
@@ -42,7 +41,6 @@ public class UserRestController {
     @Autowired
     private UserServiceInter userDaoInter;
 
-
     @GetMapping("/users")
     public ResponseEntity<ResponseDTO> getUsers(
             @RequestParam(value = "name", required = false) String name,
@@ -60,7 +58,6 @@ public class UserRestController {
 
         return ResponseEntity.ok(ResponseDTO.of(userDTOS));
     }
-
     @GetMapping("/users/{id}")
     public ResponseEntity<ResponseDTO> getUser(@PathVariable("id") int id) {
         UserTable user = userDaoInter.getById(id);
@@ -69,14 +66,12 @@ public class UserRestController {
 
         return ResponseEntity.ok(ResponseDTO.of(userDTOS));
     }
-
     @DeleteMapping("/users/{id}")
     public ResponseEntity<ResponseDTO> deleteUser(@PathVariable("id") int id) {
         UserTable user = userDaoInter.getById(id);
         userDaoInter.deleteUser(id);
         return ResponseEntity.ok(ResponseDTO.of(new UserDTO(user), "successfully deleted"));
     }
-
     @PostMapping("/users")
     public ResponseEntity<ResponseDTO> insertUser( @RequestBody UserDTO userDto) {
         UserTable userTable = new UserTable();
