@@ -1,7 +1,7 @@
 # Resume Web App (Spring)
 
 ![Java 8](https://img.shields.io/badge/Java-8-orange)
-![Spring Boot 2.4](https://img.shields.io/badge/Spring%20Boot-2.4-brightgreen)
+![Spring Boot 2.5](https://img.shields.io/badge/Spring%20Boot-2.5-brightgreen)
 
 A multi-module Spring Boot project for managing CV / resume data: users, their skills, employment history and nationality. One shared data module is used by two front ends: a secured REST API and a server-rendered JSP web app.
 
