@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 8
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '8'
+          cache: maven
+
+      # Tests are Spring context-load tests that need a running MySQL, so CI only compiles and packages.
+      - name: Build all modules
+        run: mvn -B install -DskipTests

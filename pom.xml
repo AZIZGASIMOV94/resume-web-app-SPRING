@@ -8,6 +8,7 @@
 	</properties>
 	<modules>
 		<module>resumeAppSpring</module>
+		<module>resumerestapi</module>
 		<module>resumewebappspring</module>
 	</modules>
 	<parent>
